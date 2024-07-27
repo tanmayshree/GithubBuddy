@@ -4,10 +4,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.tanmayshree.githubbuddy.dao.RepoDao
 
-@Database(entities = [TestObject::class], version = 1)
+@Database(entities = [RepoItemModel::class], version = 1)
 abstract class DB: RoomDatabase()
 {
+
+    abstract fun getDao(): RepoDao
 
     companion object {
         @Volatile
